@@ -32,7 +32,7 @@ function charCount(str){
     }
     // if the char is a number/letter AND not in the object, add it and set value to 1
     else {
-      reult[char] = 1
+      result[char] = 1
     }
 
     return result
@@ -40,4 +40,20 @@ function charCount(str){
   }
   // return object at end
 
+}
+
+// Refactor solution
+function charCount(str){
+  let result = {}
+  for (let char of str){
+    char = char.toLowerCase()
+    if (/[a-z0-9]/.test(char)) {//this weeds out all non alphabetical and non numeric char
+      if (result[char] > 0) {
+        result[char]++
+      } else {
+        result[char] = 1
+      }
+    }
+  }
+  return result
 }
