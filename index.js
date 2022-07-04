@@ -19,3 +19,25 @@
 // charCount("hello"): {h:1, e:1, l:2, o:1}
 //
 // "my phone number is 1897536"?
+
+function charCount(str){
+  // make object to return at the end
+  let result = {};
+  // loop over the string, for each char
+  for (let i = 0; i < str.length; i++){
+    let char = str[i]
+    // if the char is a number/letter AND a key in the object, add 1 to count
+    if (result[char] > 0) {
+      result[char]++
+    }
+    // if the char is a number/letter AND not in the object, add it and set value to 1
+    else {
+      reult[char] = 1
+    }
+
+    return result
+    // else dont do anything
+  }
+  // return object at end
+
+}
